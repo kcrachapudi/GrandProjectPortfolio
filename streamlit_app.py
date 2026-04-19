@@ -5,7 +5,8 @@ st.set_page_config(page_title="DE Portfolio | Your Name", layout="wide")
 
 # --- SIDEBAR (Contact & Resume) ---
 with st.sidebar:
-    st.title("Kalyan Rachapudi, MS CS")
+    st.title("Kalyan Rachapudi")
+    st.write("Masters in Computer Science | Bacherlors in Science ")
     st.divider()
     st.write("📧 [Email](mailto:kcrachapudi@gmail.com)")
 # --- MAIN HEADER ---
@@ -21,6 +22,7 @@ projects = [
     {"title": "Fraud Detection Engine", "category": "FinTech", "url": "https://url4.com", "tech": ["Spark", "Python", "Scikit-Learn"], "desc": "Streaming analytics pipeline to identify suspicious transaction patterns."},
 
     {"title": "Supply Chain Optimizer", "category": "Data Analytics", "url": "https://url5.com", "tech": ["Snowflake", "dbt", "Airflow"], "desc": "End-to-end ELT pipeline optimizing warehouse inventory levels."},
+    {"title": "Recruiter Dashboard Analytics", "category": "Data Analytics", "url": "https://rad-kalyan-rachapudi-recruiter.streamlit.app/", "tech": ["Python", "Pandas", "Plotly"], "desc": "Recruiter Analytics Dashboard for visualizing hiring metrics."},
 ]
 
 # --- TABBED INTERFACE ---
