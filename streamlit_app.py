@@ -7,8 +7,7 @@ st.set_page_config(page_title="DE Portfolio | Your Name", layout="wide")
 with st.sidebar:
     st.title("Kalyan Rachapudi, MS CS")
     st.divider()
-    st.link_button("LinkedIn", "https://linkedin.com", use_container_width=True)
-
+    st.write("📧 [Email](mailto:kcrachapudi@gmail.com)")
 # --- MAIN HEADER ---
 st.title("Project Portfolio")
 st.write("Software, Data Dngineering and Data Analytics Projects across Domains.")
