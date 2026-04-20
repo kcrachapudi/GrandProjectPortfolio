@@ -1,4 +1,8 @@
 import streamlit as st
-st.set_page_config(page_title="BioMedTech Lab", page_icon="🧬")
-st.title("🧬 BioMedTech Engineering Lab")
-st.write("Welcome to the Clinical Data Pipeline. Project details coming soon.")
+from site_manager import render_project_list
+
+st.title("🧬 BioMedTech Portfolio")
+st.write("Specialized ETL pipelines and LIS integrations for clinical environments.")
+
+# Just call the shared function with the specific filter
+render_project_list("BioMed")

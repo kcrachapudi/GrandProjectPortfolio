@@ -1,4 +1,8 @@
 import streamlit as st
-st.set_page_config(page_title="Data Analytics Lab", page_icon="📊")
-st.title("📊 Data Analytics Engineering Lab")
-st.write("Welcome to the Data Analytics Pipeline. Project details coming soon.")
+from site_manager import render_project_list
+
+st.title("📊 Data Analytics Portfolio")
+st.write("Data Analytics and Advanced Data Analytics and Data Science Projects")
+
+# Just call the shared function with the specific filter
+render_project_list("DataAnalytics")
