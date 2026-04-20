@@ -18,7 +18,7 @@ pg = st.navigation([
     st.Page("streamlit_app.py", title="Home", icon="🏠"),
     st.Page("pages/1_BioMedTech.py", title="BioMedTech", icon="🧬"),
     st.Page("pages/2_FinTech.py", title="FinTech", icon="💰"),
-    st.Page("pages/3_Data_Analytics.py", title="Data Analytics", icon="📊")
+    st.Page("pages/3_DataAnalytics.py", title="Data Analytics", icon="📊")
 ])
 
 # --- DATA (Kept here for simplicity, but you can move to projects_db.py) ---
