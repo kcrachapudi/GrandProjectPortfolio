@@ -13,6 +13,14 @@ with st.sidebar:
 st.title("Project Portfolio")
 st.write("Software, Data Dngineering and Data Analytics Projects across Domains.")
 
+# Define the pages and point them to the files in your pages folder
+pg = st.navigation([
+    st.Page("streamlit_app.py", title="Home", icon="🏠"),
+    st.Page("pages/1_BioMedTech.py", title="BioMedTech", icon="🧬"),
+    st.Page("pages/2_FinTech.py", title="FinTech", icon="💰"),
+    st.Page("pages/3_Data_Analytics.py", title="Data Analytics", icon="📊")
+])
+
 # --- DATA (Kept here for simplicity, but you can move to projects_db.py) ---
 projects = [
     {"title": "Cerner PathNet ETL Pipeline", "category": "BioMedTech", "url": "https://url1.com", "tech": ["CCL", "Python", "Oracle"], "desc": "Automated extraction of lab results into a HIPAA-compliant Postgres warehouse."},
