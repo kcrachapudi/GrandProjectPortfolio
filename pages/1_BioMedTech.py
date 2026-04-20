@@ -5,4 +5,4 @@ st.title("🧬 BioMedTech Portfolio")
 st.write("Specialized ETL pipelines and LIS integrations for clinical environments.")
 
 # Just call the shared function with the specific filter
-render_project_list("BioMed")
+render_project_list("BioMedTech")
