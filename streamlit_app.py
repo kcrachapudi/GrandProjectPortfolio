@@ -15,7 +15,8 @@ st.write("Software, Data Dngineering and Data Analytics Projects across Domains.
 
 # Define the pages and point them to the files in your pages folder
 pg = st.navigation([
-    st.Page("streamlit_app.py", title="Home", icon="🏠"),
+    st.Page("streamlit_app.py", title="Portfolio", icon="🏠"),
+    st.Page("home.py", title="Home", icon="🏠", default=True),
     st.Page("pages/1_BioMedTech.py", title="BioMedTech", icon="🧬"),
     st.Page("pages/2_FinTech.py", title="FinTech", icon="💰"),
     st.Page("pages/3_DataAnalytics.py", title="Data Analytics", icon="📊")
