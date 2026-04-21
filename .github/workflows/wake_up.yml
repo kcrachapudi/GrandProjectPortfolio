@@ -16,8 +16,10 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install Requests
-        run: pip install requests
+      - name: Install Playwright
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
 
       - name: Run Awakener
-        run: python git_wake_up.py
+        run: python wake_up_apps.py
