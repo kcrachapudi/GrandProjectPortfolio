@@ -1,0 +1,15 @@
+name: Wake Up Portfolio
+on:
+  schedule:
+    - cron: '0 8 * * *' # Runs daily at 8 AM
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install dependencies
+        run: |
+          pip install playwright
+          playwright install chromium
+      - name: Run Awakener
+        run: python git_wake_up.py
