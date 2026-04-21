@@ -1,19 +1,17 @@
-import asyncio
-from playwright.async_api import async_playwright
+import requests
+import time
 from site_manager import projects
-
-
+ 
 APP_URLS = [p['url'] for p in projects]
-
-async def main():
-    async with async_playwright() as p:
-        browser = await p.chromium.launch()
-        page = await browser.new_page()
-        for url in APP_URLS:
-            print(f"Waking up {url}...")
-            await page.goto(url)
-            await asyncio.sleep(10) # Give it time to boot
-        await browser.close()
+def wake_up():
+    for url in APP_URLS:
+        try:
+            # We just "poke" the URL. 
+            # timeout=30 ensures we wait long enough for the 'spin up' to start
+            response = requests.get(url, timeout=30)
+            print(f"Pinged {url} - Status Code: {response.status_code}")
+        except Exception as e:
+            print(f"Failed to reach {url}: {e}")
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    wake_up()
