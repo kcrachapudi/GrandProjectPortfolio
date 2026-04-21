@@ -1,6 +1,6 @@
 import requests
 import time
-from site_manager import projects
+from site_urls import projects
  
 APP_URLS = [p['url'] for p in projects]
 def wake_up():
