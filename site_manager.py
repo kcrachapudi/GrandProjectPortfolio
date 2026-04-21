@@ -2,7 +2,7 @@ import streamlit as st
 
 # --- DATA (Kept here for simplicity, but you can move to projects_db.py) ---
 projects = [
-    {"title": "Cerner PathNet ETL Pipeline", "category": "BioMedTech", "url": "https://url1.com", "tech": ["CCL", "Python", "Oracle"], "desc": "Automated extraction of lab results into a HIPAA-compliant Postgres warehouse."},
+    {"title": "MediStream-AI-Ready-Medical-Imaging-Pipeline", "category": "BioMedTech", "url": "https://medistream-ai-ready-medical-imaging-pipeline.streamlit.app/", "tech": ["Python", "pydicom", "pandas"], "desc": "Automated extraction of lab results into a HIPAA-compliant Postgres warehouse."},
     {"title": "HL7 Message Parser", "category": "BioMedTech", "url": "https://url2.com", "tech": ["Python", "FastAPI"], "desc": "Real-time parsing of HL7v2 messages for clinical decision support."},
     
     {"title": "Real-time Ledger Sync", "category": "FinTech", "url": "https://url3.com", "tech": ["Kafka", "Go", "Postgres"], "desc": "Distributed system for synchronizing multi-currency ledgers with 99.99% uptime."},
