@@ -16,4 +16,4 @@ def render_project_list(category_filter, projects=projects):
                 st.markdown(" ".join([f"`{t}`" for t in p['tech']]))
             with col2:
                 st.write("##") # Vertical spacer
-                st.link_button("View Code 🔗", p['url'], use_container_width=True)
+                st.link_button("Visit 🔗", p['url'], use_container_width=True)
