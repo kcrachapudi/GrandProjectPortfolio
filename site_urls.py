@@ -6,7 +6,7 @@ projects = [
 
     {"title": "Smart Credit Risk & Loan Eligibility Engine", "category": "FinTech", "url": "https://smartcreditriskloaneligibilityengine.streamlit.app/", "tech": ["Pythona", "Pandas", "AIML"], "desc": "Smart Credit Risk & Loan Eligibility Engine."},
     {"title": "Stock Market Performance and Forecasting Engine", "category": "FinTech", "url": "https://stockmarketperformanceandforecastingengine.streamlit.app//", "tech": ["Pythona", "Pandas", "AIML"], "desc": "Stock Market Performance and Forecasting Engine."},
-    {"title": "Fraud Detection Engine", "category": "FinTech", "url": "https://url4.com", "tech": ["Spark", "Python", "Scikit-Learn"], "desc": "Streaming analytics pipeline to identify suspicious transaction patterns."},
+    {"title": "Real-Time Transaction Fraud Detection Engine.", "category": "FinTech", "url": "https://real-timetransactionfrauddetectionsystem.streamlit.app/", "tech": ["Python", "Scikit-Learn"], "desc": "Real-Time Transaction Fraud Detection Engine."},
 
     {"title": "Recruiter Dashboard Analytics", "category": "DataAnalytics", "url": "https://rad-kalyan-rachapudi-recruiter.streamlit.app/", "tech": ["Python", "Pandas", "Plotly"], "desc": "Recruiter Analytics Dashboard for visualizing hiring metrics."},
 ]
