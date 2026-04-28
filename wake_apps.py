@@ -1,16 +1,21 @@
 import asyncio
 from playwright.async_api import async_playwright
 
-APP_URLS = ["https://bioinform1.streamlit.app/"]
+APP_URLS = ["https://bioinform1.streamlit.app/", 
+            "https://bioinform2.streamlit.app/", 
+            "https://medistream-ai-ready-medical-imaging-pipeline.streamlit.app/",
+            "https://smartcreditriskloaneligibilityengine.streamlit.app/",
+            "https://stockmarketperformanceandforecastingengine.streamlit.app/",
+            "https://real-timetransactionfrauddetectionsystem.streamlit.app/",
+            "https://rad-kalyan-rachapudi-recruiter.streamlit.app/"]
 
 async def wake_apps():
     async with async_playwright() as p:
         browser = await p.chromium.launch(headless=True)
-        page = await browser.new_page()
-
         for url in APP_URLS:
             print(f"Checking {url}...")
             try:
+                page = await browser.new_page()
                 # 1. Increase timeout to wait for the slow sleep-screen to load
                 await page.goto(url, wait_until="networkidle", timeout=90000)
                 
@@ -32,12 +37,12 @@ async def wake_apps():
                         print(f"Page looks asleep but button not found. Trying manual click...")
                         # Fallback: click any button that looks like a wake button
                         await page.click("button:has-text('back up')")
-                        await asyncio.sleep(30)
+                        await asyncio.sleep(10)
                     else:
                         print(f"{url} appears genuinely awake.")
             except Exception as e:
                 print(f"Error during wake-up for {url}: {e}")
-        
+            await page.close()
         await browser.close()
 
 if __name__ == "__main__":
