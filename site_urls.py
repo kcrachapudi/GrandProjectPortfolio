@@ -10,3 +10,4 @@ projects = [
 
     {"title": "Recruiter Dashboard Analytics", "category": "DataAnalytics", "url": "https://rad-kalyan-rachapudi-recruiter.streamlit.app/", "tech": ["Python", "Pandas", "Plotly"], "desc": "Recruiter Analytics Dashboard for visualizing hiring metrics."},
 ]
+   
