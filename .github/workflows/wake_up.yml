@@ -1,7 +1,7 @@
 name: Wake Up Portfolio
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '*/30 * * * *'
   workflow_dispatch:
 
 jobs:
@@ -22,4 +22,4 @@ jobs:
           playwright install --with-deps chromium
 
       - name: Run Awakener
-        run: python wake_up_apps.py
+        run: python wake_apps.py
