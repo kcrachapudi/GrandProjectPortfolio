@@ -73,7 +73,7 @@ def parse_status(line, statuses):
 
 def run_wake_script(log_q):
     proc = subprocess.Popen(
-        ["python", "wake_apps.py"],
+        ["python", "-u", "wake_apps.py"],
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
         text=True,
@@ -206,22 +206,32 @@ section[data-testid="stSidebarContent"] { display: none !important; }
     letter-spacing: 2px;
 }
 
-/* text_area styling */
-div[data-testid="stTextArea"] label {
+.log-label {
     font-family: "IBM Plex Mono", monospace;
     font-size: 0.65rem;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #00e5cc !important;
+    color: #00e5cc;
+    margin-bottom: 6px;
 }
-div[data-testid="stTextArea"] textarea {
-    background: #ffffff !important;
-    color: #006655 !important;
-    border: 1px solid #00ccaa !important;
-    border-radius: 10px !important;
-    font-family: "IBM Plex Mono", monospace !important;
-    font-size: 0.68rem !important;
-    line-height: 1.9 !important;
+.log-box {
+    background: #ffffff;
+    border: 1px solid #00ccaa;
+    border-radius: 10px;
+    padding: 12px 16px;
+    height: 120px;
+    overflow-y: auto;
+    margin-bottom: 1rem;
+}
+.log-row {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 0.68rem;
+    color: #005544;
+    line-height: 1.9;
+}
+.log-placeholder {
+    color: #aacccc;
+    font-style: italic;
 }
 
 .error-hint {
@@ -252,7 +262,8 @@ div[data-testid="stTextArea"] textarea {
 }
 .log-line {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 0.68rem;
+    font-size: 0.95rem !important;
+    font-weight: bold !important;
     color: #333355;
     line-height: 1.9;
 }
@@ -316,8 +327,12 @@ while not q.empty():
         break
 
 # ── inline log box ────────────────────────────────────────────────────────────
-log_text = chr(10).join(st.session_state.logs[-60:]) if st.session_state.logs else ""
-st.text_area("Log", value=log_text, height=120, disabled=True, placeholder="Log output will appear here...")
+log_lines = st.session_state.logs[-60:] if st.session_state.logs else []
+log_rows = "".join(f'<div class="log-row">&gt; {line}</div>' for line in log_lines) or '<div class="log-row log-placeholder">Log output will appear here...</div>'
+st.markdown(f"""
+<div class="log-label">LOG</div>
+<div class="log-box">{log_rows}</div>
+""", unsafe_allow_html=True)
 
 st.markdown("<div style='height:1.2rem'></div>", unsafe_allow_html=True)
 
